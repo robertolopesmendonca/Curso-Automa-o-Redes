@@ -1,7 +1,7 @@
 import getpass
 import telnetlib
 
-HOST = "192.168.15.112"
+HOST = "192.168.91.103"
 user = input("Entre com seu usuário: ")
 password = getpass.getpass()
 
@@ -15,7 +15,7 @@ if password:
 
 tn.write(b"conf t\n")
 
-for vlans in range (10,16):
+for vlans in range (2,51):
     tn.write(b"vlan " + str(vlans).encode('ascii') + b"\n")
     tn.write(b"name Site_ " + str(vlans).encode('ascii') + b"\n")
 
